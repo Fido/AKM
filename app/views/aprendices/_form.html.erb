@@ -1,15 +1,5 @@
 <%= form_for(@aprendiz) do |f| %>
-  <% if @aprendiz.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@aprendiz.errors.count, "error") %> prohibited this aprendiz from being saved:</h2>
-
-      <ul>
-      <% @aprendiz.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render "shared/error_messages", :target => @aprendiz %>
 
   <div class="field">
     <%= f.label :cedula %><br />
