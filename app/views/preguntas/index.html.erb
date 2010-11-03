@@ -1,0 +1,29 @@
+<h1>Listing preguntas</h1>
+
+<table>
+  <tr>
+    <th>Pregunta</th>
+    <th>Buena</th>
+    <th>Puntaje</th>
+    <th>Prueba</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @preguntas.each do |pregunta| %>
+  <tr>
+    <td><%= pregunta.pregunta %></td>
+    <td><%= pregunta.buena %></td>
+    <td><%= pregunta.puntaje %></td>
+    <td><%= pregunta.prueba_id %></td>
+    <td><%= link_to 'Show', pregunta %></td>
+    <td><%= link_to 'Edit', edit_pregunta_path(pregunta) %></td>
+    <td><%= link_to 'Destroy', pregunta, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pregunta', new_pregunta_path %>

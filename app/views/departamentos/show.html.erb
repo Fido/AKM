@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @departamento.name %>
+</p>
+
+<p>
+  <b>Pais:</b>
+  <%= @departamento.pais_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_departamento_path(@departamento) %> |
+<%= link_to 'Back', departamentos_path %>

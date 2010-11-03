@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  totales: MyString
+  equipo_id: 1
+
+two:
+  totales: MyString
+  equipo_id: 1

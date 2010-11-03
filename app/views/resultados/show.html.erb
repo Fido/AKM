@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Equipo:</b>
+  <%= @resultado.equipo_id %>
+</p>
+
+<p>
+  <b>Respuesta:</b>
+  <%= @resultado.respuesta_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_resultado_path(@resultado) %> |
+<%= link_to 'Back', resultados_path %>

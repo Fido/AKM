@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Pregunta:</b>
+  <%= @pregunta.pregunta %>
+</p>
+
+<p>
+  <b>Buena:</b>
+  <%= @pregunta.buena %>
+</p>
+
+<p>
+  <b>Puntaje:</b>
+  <%= @pregunta.puntaje %>
+</p>
+
+<p>
+  <b>Prueba:</b>
+  <%= @pregunta.prueba_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_pregunta_path(@pregunta) %> |
+<%= link_to 'Back', preguntas_path %>

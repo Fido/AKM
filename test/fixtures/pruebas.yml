@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  fch_limite: 2010-11-03 10:49:10
+  fase_id: 1
+  aprendiz_id: 1
+
+two:
+  name: MyString
+  fch_limite: 2010-11-03 10:49:10
+  fase_id: 1
+  aprendiz_id: 1

@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  pregunta: MyString
+  buena: 
+  puntaje: 
+  prueba_id: 1
+
+two:
+  pregunta: MyString
+  buena: 
+  puntaje: 
+  prueba_id: 1

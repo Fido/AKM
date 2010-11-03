@@ -1,4 +1,34 @@
 AKM::Application.routes.draw do
+  resources :avances
+
+  resources :finales
+
+  resources :equipos
+
+  resources :resultados
+
+  resources :respuestas
+
+  resources :preguntas
+
+  resources :fases
+
+  resources :pruebas
+
+  resources :paises
+
+  resources :departamentos
+
+  resources :municipios
+
+  resources :aprendices
+
+  resources :programas_responsables
+
+  resources :programas
+
+  resources :instructores
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

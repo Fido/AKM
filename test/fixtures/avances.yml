@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  final_id: 1
+  prueba_id: 1
+
+two:
+  final_id: 1
+  prueba_id: 1

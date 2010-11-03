@@ -1,0 +1,25 @@
+<h1>Listing resultados</h1>
+
+<table>
+  <tr>
+    <th>Equipo</th>
+    <th>Respuesta</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @resultados.each do |resultado| %>
+  <tr>
+    <td><%= resultado.equipo_id %></td>
+    <td><%= resultado.respuesta_id %></td>
+    <td><%= link_to 'Show', resultado %></td>
+    <td><%= link_to 'Edit', edit_resultado_path(resultado) %></td>
+    <td><%= link_to 'Destroy', resultado, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Resultado', new_resultado_path %>

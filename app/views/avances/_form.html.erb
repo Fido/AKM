@@ -1,0 +1,25 @@
+<%= form_for(@avance) do |f| %>
+  <% if @avance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@avance.errors.count, "error") %> prohibited this avance from being saved:</h2>
+
+      <ul>
+      <% @avance.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :final_id %><br />
+    <%= f.text_field :final_id %>
+  </div>
+  <div class="field">
+    <%= f.label :prueba_id %><br />
+    <%= f.text_field :prueba_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
