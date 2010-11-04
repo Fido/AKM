@@ -1,15 +1,5 @@
 <%= form_for(@programa) do |f| %>
-  <% if @programa.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@programa.errors.count, "error") %> prohibited this programa from being saved:</h2>
-
-      <ul>
-      <% @programa.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+    <%= render "shared/error_messages", :target => @programa %>
 
   <div class="field">
     <%= f.label :codigo %><br />

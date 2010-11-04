@@ -1,15 +1,5 @@
 <%= form_for(@pais) do |f| %>
-  <% if @pais.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@pais.errors.count, "error") %> prohibited this pais from being saved:</h2>
-
-      <ul>
-      <% @pais.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+    <%= render "shared/error_messages", :target => @pais %>
 
   <div class="field">
     <%= f.label :name %><br />
