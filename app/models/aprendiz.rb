@@ -1,9 +1,11 @@
 class Aprendiz < ActiveRecord::Base
   attr_accessible :cedula , :nombre , :email
 
-  belongs_to :programa , :municipio , :equipo
-
-  has_many  :pruebas
+  belongs_to :programa 
+  belongs_to :municipio
+  belongs_to :equipo
+  
+  has_many :pruebas
 
   validates :cedula ,
             :presence => true ,
@@ -16,7 +18,7 @@ class Aprendiz < ActiveRecord::Base
 
   validates :email,
             :presence => true,
-            :length => {:minimum => 3, :maximum => 254},
+            :length => {:minimum => 5, :maximum => 254},
             :uniqueness => true,
             :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i } 
 end

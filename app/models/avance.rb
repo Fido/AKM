@@ -1,4 +1,7 @@
 class Avance < ActiveRecord::Base
-  belongs_to :prueba , :final
+  attr_accessible :prueba , :final
+
+  belongs_to :prueba
+  belongs_to :final
   
 end

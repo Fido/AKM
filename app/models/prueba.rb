@@ -1,9 +1,11 @@
 class Prueba < ActiveRecord::Base
   attr_accessible :name , :fch_limite
 
-  belongs_to :fase , :aprendiz
+  belongs_to :fase
+  belongs_to :aprendiz
 
-  has_many :preguntas , :avances
+  has_many :preguntas
+  has_many :avances
 
   validates :name ,
             :presence => true ,
