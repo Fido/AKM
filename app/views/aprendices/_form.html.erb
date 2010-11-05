@@ -25,10 +25,12 @@
     <%= f.label :telefono %><br />
     <%= f.text_field :telefono %>
   </div>
-  <div class="field">
-    <%= f.label :genero %><br />
-    <%= f.text_field :genero %>
+  
+  <div class="field"> Genero:<br />
+     Masculino <%= f.radio_button("genero", 1) %>
+     Femenino <%= f.radio_button("genero", 0)%>
   </div>
+
   <div class="field">
     <%= f.label :municipio_id %><br />
     <%= f.text_field :municipio_id %>

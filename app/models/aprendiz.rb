@@ -21,4 +21,9 @@ class Aprendiz < ActiveRecord::Base
             :length => {:minimum => 3, :maximum => 254},
             :uniqueness => true,
             :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i } 
+
+  def genero1
+     (self.genero == 1) ? "Masculino" : "Femenino"
+  end
+
 end
