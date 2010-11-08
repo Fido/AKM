@@ -1,3 +1,5 @@
+#include ChainSelectsHelper
+
 class AprendicesController < ApplicationController
 
   def index
@@ -9,8 +11,7 @@ class AprendicesController < ApplicationController
     end
   end
 
-  # GET /aprendices/1
-  # GET /aprendices/1.xml
+ 
   def show
     @aprendiz = Aprendiz.find(params[:id])
 
@@ -20,8 +21,6 @@ class AprendicesController < ApplicationController
     end
   end
 
-  # GET /aprendices/new
-  # GET /aprendices/new.xml
   def new
     @aprendiz = Aprendiz.new
 
@@ -31,15 +30,14 @@ class AprendicesController < ApplicationController
     end
   end
 
-  # GET /aprendices/1/edit
   def edit
     @aprendiz = Aprendiz.find(params[:id])
   end
 
-  # POST /aprendices
-  # POST /aprendices.xml
   def create
     @aprendiz = Aprendiz.new(params[:aprendiz])
+    #aprendiz.municipio_id = params[:chain_select][:municipio]
+
 
     respond_to do |format|
       if @aprendiz.save
@@ -52,8 +50,6 @@ class AprendicesController < ApplicationController
     end
   end
 
-  # PUT /aprendices/1
-  # PUT /aprendices/1.xml
   def update
     @aprendiz = Aprendiz.find(params[:id])
 
@@ -68,8 +64,6 @@ class AprendicesController < ApplicationController
     end
   end
 
-  # DELETE /aprendices/1
-  # DELETE /aprendices/1.xml
   def destroy
     @aprendiz = Aprendiz.find(params[:id])
     @aprendiz.destroy

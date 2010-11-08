@@ -7,6 +7,9 @@ gem 'rails', '3.0.1'
 
 gem 'mysql2'
 
+#gem 'ChainSelects', :git => 'git://github.com/diwadm/ChainSelects.git'
+
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

@@ -1,4 +1,7 @@
 AKM::Application.routes.draw do
+
+  #resources :chain_selects
+
   resources :avances
 
   resources :finales
