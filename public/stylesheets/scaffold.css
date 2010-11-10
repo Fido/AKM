@@ -54,3 +54,163 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+
+
+#menuhoriz ul li {
+        display: inline;
+        padding: 2px 7px; /*Separar el texto*/
+        margin: 15px; /* Separar los botones */
+         /* Color de fondo */
+
+}
+#menuhoriz ul li:hover {
+        background­color:#AEB404; /* Color de fondo sobre el boton */
+        cursor: pointer; /* cambiar el aspecto del puntero */
+
+}
+#menuhoriz ul {
+        /* Linea para delimitar la botonera */
+        border­bottom­width: 1px;
+        border­bottom­style: solid;
+        border­bottom­color: #E4E4E4;
+
+}
+
+table tr.pair {
+background:#FFFFCC none repeat scroll 0 0;
+color:inherit;
+}
+
+table tr.odd {
+background: #fff;
+}
+
+table th {
+  background­color:inherit;
+  font­weight:bold;
+  text­align:left;
+  font­size:1em;
+}
+
+#footer{
+        font-family: candara;
+        text-align: center;
+        clear: left;
+	margin-top: 30px;
+	padding-top: 6px;
+	color: #999;
+	border-top: 1px solid #FFDF3D;
+
+}
+
+#notice{}
+
+#yield{font-family: candara;
+       font-size: 12px;
+       text-align: center;
+
+}
+
+table tr.pair {
+background:#FFFFCC none repeat scroll 0 0;
+color:inherit;
+}
+
+table tr.odd {
+	background: #fff;
+}
+
+table th {
+  background-color:inherit;
+  font-weight:bold;
+  text-align:left;
+  font-size:1em;
+}
+
+
+.tabletd {
+	border-bottom: 2px solid #ccc;
+	font-size: 30px;
+	padding: 20px;
+	border-collapse: collapse;
+	border: 1px solid #000;
+}
+
+.round {
+-moz-border-radius: 15px;
+-webkit-border-radius: 15px;
+
+
+}
+
+.navigation {
+background-color: #F5FFEC;
+padding: 0 0.7em;
+white-space: nowrap;
+width: 900px;
+height: 600px;
+float: inherit;
+
+
+}
+ul.navigation {margin: 0;
+                 }
+
+.navigation li {
+list-style-type: none;
+display: inline-block;
+padding: 0.2em 0;
+
+}
+.navigation li a {
+padding: 0 5px;
+font-weight: bold;
+
+}
+.navigation li a:visited {
+color: #09c;
+}
+.navigation li a:hover {
+text-decoration: underline;
+}
+
+div#user_nav { float: right;
+               font-size: 0.9em;
+               font-variant: normal;
+               margin-top: 0px;
+               background-color: #F7F7F7;
+}
+div#bannere { background-position: top;
+          background-repeat: no-repeat;
+          width: 1400px;
+          height: 164px;
+          padding: 0 0.7em;
+          white-space: nowrap;
+
+
+}
+
+#menuvert ul li {
+        display: list-item;
+        padding: 2px 7px; /*Separar el texto*/
+        margin: 5px; /* Separar los botones */
+        position: left;
+}
+
+#menuvert ul li:hover {
+        background­color:#AEB404; /* Color de fondo sobre el boton */
+        cursor: pointer; /* cambiar el aspecto del puntero */
+
+}
+
+#menuvert ul {
+        /* Linea para delimitar la botonera */
+        border­bottom­width: 10px;
+        border­bottom­style: solid;
+        border­bottom­color: #E4E4E4;
+
+}
+#menuvert {
+
+
+}

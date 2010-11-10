@@ -1,6 +1,7 @@
 AKM::Application.routes.draw do
 
-  #resources :chain_selects
+  get 'home/index'
+  root :to => 'home#index'
 
   resources :avances
 
@@ -81,7 +82,7 @@ AKM::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+   #root :to => "home"
 
   # See how all your routes lay out with "rake routes"
 
