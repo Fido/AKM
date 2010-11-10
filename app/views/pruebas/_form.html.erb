@@ -11,12 +11,19 @@
   </div>
   <div class="field">
     <%= f.label :fase_id %><br />
-    <%= f.text_field :fase_id %>
+    <select id="prueba_fase_id" name="prueba[fase_id]" class ="campo">
+            <option selected></option>
+	      <%= options_from_collection_for_select(@fases, "id", "name", @prueba.fase_id ) %>
+    </select>
   </div>
-  <div class="field">
+   <div class="field">
     <%= f.label :aprendiz_id %><br />
-    <%= f.text_field :aprendiz_id %>
+    <select id="prueba_aprendiz_id" name="prueba[aprendiz_id]" class ="campo">
+            <option selected></option>
+	      <%= options_from_collection_for_select(@aprendices, "id", "nombre", @prueba.aprendiz_id ) %>
+    </select>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

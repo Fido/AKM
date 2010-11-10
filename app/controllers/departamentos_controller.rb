@@ -1,6 +1,5 @@
 class DepartamentosController < ApplicationController
-  # GET /departamentos
-  # GET /departamentos.xml
+
   def index
     @departamentos = Departamento.all
 
@@ -10,8 +9,6 @@ class DepartamentosController < ApplicationController
     end
   end
 
-  # GET /departamentos/1
-  # GET /departamentos/1.xml
   def show
     @departamento = Departamento.find(params[:id])
 
@@ -21,10 +18,9 @@ class DepartamentosController < ApplicationController
     end
   end
 
-  # GET /departamentos/new
-  # GET /departamentos/new.xml
   def new
     @departamento = Departamento.new
+    @paises = Pais.find(:all)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -32,13 +28,11 @@ class DepartamentosController < ApplicationController
     end
   end
 
-  # GET /departamentos/1/edit
   def edit
     @departamento = Departamento.find(params[:id])
+    @paises = Pais.find(:all)
   end
 
-  # POST /departamentos
-  # POST /departamentos.xml
   def create
     @departamento = Departamento.new(params[:departamento])
 
@@ -47,14 +41,13 @@ class DepartamentosController < ApplicationController
         format.html { redirect_to(@departamento, :notice => 'Departamento was successfully created.') }
         format.xml  { render :xml => @departamento, :status => :created, :location => @departamento }
       else
+        @paises = Pais.find(:all)
         format.html { render :action => "new" }
         format.xml  { render :xml => @departamento.errors, :status => :unprocessable_entity }
       end
     end
   end
 
-  # PUT /departamentos/1
-  # PUT /departamentos/1.xml
   def update
     @departamento = Departamento.find(params[:id])
 
@@ -63,14 +56,13 @@ class DepartamentosController < ApplicationController
         format.html { redirect_to(@departamento, :notice => 'Departamento was successfully updated.') }
         format.xml  { head :ok }
       else
+        @paises = Pais.find(:all)
         format.html { render :action => "edit" }
         format.xml  { render :xml => @departamento.errors, :status => :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /departamentos/1
-  # DELETE /departamentos/1.xml
   def destroy
     @departamento = Departamento.find(params[:id])
     @departamento.destroy

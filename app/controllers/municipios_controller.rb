@@ -25,7 +25,7 @@ class MunicipiosController < ApplicationController
   # GET /municipios/new.xml
   def new
     @municipio = Municipio.new
-
+    @departamentos = Departamento.find(:all)
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @municipio }
@@ -35,6 +35,7 @@ class MunicipiosController < ApplicationController
   # GET /municipios/1/edit
   def edit
     @municipio = Municipio.find(params[:id])
+    @departamentos = Departamento.find(:all)
   end
 
   # POST /municipios
@@ -47,6 +48,7 @@ class MunicipiosController < ApplicationController
         format.html { redirect_to(@municipio, :notice => 'Municipio was successfully created.') }
         format.xml  { render :xml => @municipio, :status => :created, :location => @municipio }
       else
+        @departamentos = Departamento.find(:all)
         format.html { render :action => "new" }
         format.xml  { render :xml => @municipio.errors, :status => :unprocessable_entity }
       end
@@ -63,6 +65,7 @@ class MunicipiosController < ApplicationController
         format.html { redirect_to(@municipio, :notice => 'Municipio was successfully updated.') }
         format.xml  { head :ok }
       else
+        @departamentos = Departamento.find(:all)
         format.html { render :action => "edit" }
         format.xml  { render :xml => @municipio.errors, :status => :unprocessable_entity }
       end

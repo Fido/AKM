@@ -1,5 +1,6 @@
 class Aprendiz < ActiveRecord::Base
-  attr_accessible :cedula , :nombre , :email
+  attr_accessible :cedula , :nombre , :apellido , :fch_ncto , :email , :telefono ,
+                  :genero , :municipio_id , :equipo_id , :programa_id
 
   belongs_to :programa 
   belongs_to :municipio
@@ -23,7 +24,7 @@ class Aprendiz < ActiveRecord::Base
             :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i } 
 
   def genero1
-     (self.genero == 1) ? "Masculino" : "Femenino"
+     (self.genero == 1) ?  "Femenino" : "Masculino"
   end
 
 end

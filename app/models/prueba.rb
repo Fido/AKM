@@ -1,5 +1,5 @@
 class Prueba < ActiveRecord::Base
-  attr_accessible :name , :fch_limite
+  attr_accessible :name , :fch_limite , :fase_id , :aprendiz_id
 
   belongs_to :fase
   belongs_to :aprendiz

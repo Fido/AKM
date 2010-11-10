@@ -5,10 +5,14 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
+ 
   <div class="field">
-    <%= f.label :pais_id %><br />
-    <%= f.text_field :pais_id %>
+    <select id="departamento_pais_id" name="departamento[pais_id]" class ="campo">
+            <option selected></option>
+	      <%= options_from_collection_for_select(@paises, "id", "name", @departamento.pais_id ) %>
+    </select>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -30,21 +30,32 @@
      Masculino <%= f.radio_button("genero", 1) %>
      Femenino <%= f.radio_button("genero", 0)%>
   </div>
-
   <div class="field">
     <%= f.label :municipio_id %><br />
-    <%= f.text_field :municipio_id %>
+    <select id="aprendiz_municipio_id" name="aprendiz[municipio_id]" class ="campo">
+            <option selected></option>
+	      <%= options_from_collection_for_select(@municipios, "id", "name", @aprendiz.municipio_id ) %>
+    </select>
   </div>
 
   <div class="field">
     <%= f.label :equipo_id %><br />
-    <%= f.text_field :equipo_id %>
+    <select id="aprendiz_equipo_id" name="aprendiz[equipo_id]" class ="campo">
+            <option selected></option>
+	      <%= options_from_collection_for_select(@equipos, "id", "name", @aprendiz.equipo_id ) %>
+		</select>
   </div>
+  
   <div class="field">
     <%= f.label :programa_id %><br />
-    <%= f.text_field :programa_id %>
+    <select id="aprendiz_programa_id" name="aprendiz[programa_id]" class ="campo">
+            <option selected></option>
+	      <%= options_from_collection_for_select(@programas, "id", "name", @aprendiz.programa_id ) %>
+    </select>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>
+

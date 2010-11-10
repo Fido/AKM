@@ -1,5 +1,5 @@
 class Pregunta < ActiveRecord::Base
-  attr_accessible :pregunta , :buena , :puntaje
+  attr_accessible :pregunta , :buena , :puntaje , :prueba_id
 
   belongs_to :prueba
 

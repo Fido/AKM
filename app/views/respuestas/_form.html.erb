@@ -3,7 +3,10 @@
 
   <div class="field">
     <%= f.label :pregunta_id %><br />
-    <%= f.text_field :pregunta_id %>
+    <select id="respuesta_pregunta_id" name="respuesta[pregunta_id]" class ="campo">
+            <option selected></option>
+	     <%= options_from_collection_for_select(@preguntas, "id", "pregunta", @respuesta.pregunta_id ) %>
+    </select>
   </div>
   <div class="field">
     <%= f.label :respuesta %><br />

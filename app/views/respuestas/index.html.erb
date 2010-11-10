@@ -12,7 +12,7 @@
 
 <% @respuestas.each do |respuesta| %>
   <tr>
-    <td><%= respuesta.pregunta_id %></td>
+    <td><%= respuesta.pregunta.pregunta %></td>
     <td><%= respuesta.respuesta %></td>
     <td><%= respuesta.letra %></td>
     <td><%= link_to 'Show', respuesta %></td>

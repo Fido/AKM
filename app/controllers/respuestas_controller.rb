@@ -1,6 +1,5 @@
 class RespuestasController < ApplicationController
-  # GET /respuestas
-  # GET /respuestas.xml
+ 
   def index
     @respuestas = Respuesta.all
 
@@ -10,8 +9,6 @@ class RespuestasController < ApplicationController
     end
   end
 
-  # GET /respuestas/1
-  # GET /respuestas/1.xml
   def show
     @respuesta = Respuesta.find(params[:id])
 
@@ -21,24 +18,20 @@ class RespuestasController < ApplicationController
     end
   end
 
-  # GET /respuestas/new
-  # GET /respuestas/new.xml
   def new
     @respuesta = Respuesta.new
-
+    @preguntas = Pregunta.find(:all)
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @respuesta }
     end
   end
 
-  # GET /respuestas/1/edit
   def edit
     @respuesta = Respuesta.find(params[:id])
+    @preguntas = Pregunta.find(:all)
   end
 
-  # POST /respuestas
-  # POST /respuestas.xml
   def create
     @respuesta = Respuesta.new(params[:respuesta])
 
@@ -47,14 +40,13 @@ class RespuestasController < ApplicationController
         format.html { redirect_to(@respuesta, :notice => 'Respuesta was successfully created.') }
         format.xml  { render :xml => @respuesta, :status => :created, :location => @respuesta }
       else
+        @preguntas = Pregunta.find(:all)
         format.html { render :action => "new" }
         format.xml  { render :xml => @respuesta.errors, :status => :unprocessable_entity }
       end
     end
   end
 
-  # PUT /respuestas/1
-  # PUT /respuestas/1.xml
   def update
     @respuesta = Respuesta.find(params[:id])
 
@@ -63,14 +55,13 @@ class RespuestasController < ApplicationController
         format.html { redirect_to(@respuesta, :notice => 'Respuesta was successfully updated.') }
         format.xml  { head :ok }
       else
+        @preguntas = Pregunta.find(:all)
         format.html { render :action => "edit" }
         format.xml  { render :xml => @respuesta.errors, :status => :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /respuestas/1
-  # DELETE /respuestas/1.xml
   def destroy
     @respuesta = Respuesta.find(params[:id])
     @respuesta.destroy

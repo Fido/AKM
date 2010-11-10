@@ -6,8 +6,10 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :departamento_id %><br />
-    <%= f.text_field :departamento_id %>
+    <select id="municipio_departamento_id" name="municipio[departamento_id]" class ="campo">
+            <option selected></option>
+	      <%= options_from_collection_for_select(@departamentos, "id", "name", @municipio.departamento_id ) %>
+    </select>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -1,5 +1,5 @@
 class Respuesta < ActiveRecord::Base
-  attr_accessible :respuesta , :letra
+  attr_accessible :pregunta_id , :respuesta , :letra
 
   belongs_to :pregunta
 

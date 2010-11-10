@@ -1,9 +1,5 @@
 <%= form_for(@pregunta) do |f| %>
-<<<<<<< HEAD
     <%= render "shared/error_messages", :target => @pregunta %>
-=======
-    <%= render "shared/error_messages", :target => @apregunta %>
->>>>>>> 91e5d57f9089ec8ae55ea768a83e35d18f56e487
 
   <div class="field">
     <%= f.label :pregunta %><br />
@@ -19,7 +15,10 @@
   </div>
   <div class="field">
     <%= f.label :prueba_id %><br />
-    <%= f.text_field :prueba_id %>
+    <select id="pregunta_prueba_id" name="pregunta[prueba_id]" class ="campo">
+            <option selected></option>
+	      <%= options_from_collection_for_select(@pruebas, "id", "name", @pregunta.prueba_id ) %>
+		</select>
   </div>
   <div class="actions">
     <%= f.submit %>

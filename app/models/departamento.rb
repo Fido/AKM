@@ -1,5 +1,5 @@
 class Departamento < ActiveRecord::Base
-  attr_accessible :name
+  attr_accessible :name , :pais_id
 
   belongs_to :pais
 
@@ -10,5 +10,8 @@ class Departamento < ActiveRecord::Base
   validates :name ,
             :presence => true ,
             :length => { :maximum => 80 }
+
+  validates :pais_id ,
+            :presence => true 
 
 end

@@ -23,6 +23,9 @@ class AprendicesController < ApplicationController
 
   def new
     @aprendiz = Aprendiz.new
+    @municipios = Municipio.find(:all)
+    @programas = Programa.find(:all)
+    @equipos = Equipo.find(:all)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -32,18 +35,23 @@ class AprendicesController < ApplicationController
 
   def edit
     @aprendiz = Aprendiz.find(params[:id])
+    @municipios = Municipio.find(:all)
+    @programas = Programa.find(:all)
+    @equipos = Equipo.find(:all)
   end
 
   def create
     @aprendiz = Aprendiz.new(params[:aprendiz])
     #aprendiz.municipio_id = params[:chain_select][:municipio]
 
-
     respond_to do |format|
       if @aprendiz.save
         format.html { redirect_to(@aprendiz, :notice => 'Aprendiz was successfully created.') }
         format.xml  { render :xml => @aprendiz, :status => :created, :location => @aprendiz }
       else
+        @municipios = Municipio.find(:all)
+        @programas = Programa.find(:all)
+        @equipos = Equipo.find(:all)
         format.html { render :action => "new" }
         format.xml  { render :xml => @aprendiz.errors, :status => :unprocessable_entity }
       end
@@ -58,6 +66,9 @@ class AprendicesController < ApplicationController
         format.html { redirect_to(@aprendiz, :notice => 'Aprendiz was successfully updated.') }
         format.xml  { head :ok }
       else
+        @municipios = Municipio.find(:all)
+        @programas = Programa.find(:all)
+        @equipos = Equipo.find(:all)
         format.html { render :action => "edit" }
         format.xml  { render :xml => @aprendiz.errors, :status => :unprocessable_entity }
       end

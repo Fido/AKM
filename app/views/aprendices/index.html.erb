@@ -15,6 +15,7 @@
     <th></th>
     <th></th>
     <th></th>
+   
   </tr>
 
 <% @aprendices.each do |aprendiz| %>
@@ -25,13 +26,14 @@
     <td><%= aprendiz.fch_ncto %></td>
     <td><%= aprendiz.email %></td>
     <td><%= aprendiz.telefono %></td>
-    <td><%= aprendiz.genero %></td>
-    <td><%= aprendiz.municipio.id %></td>
-    <td><%= aprendiz.equipo_id %></td>
-    <td><%= aprendiz.programa_id %></td>
+    <td><%= aprendiz.genero1 %></td>
+    <td><%= aprendiz.municipio.name %></td>
+    <td><%= aprendiz.equipo.name %></td>
+    <td><%= aprendiz.programa.name %></td>
     <td><%= link_to 'Show', aprendiz %></td>
     <td><%= link_to 'Edit', edit_aprendiz_path(aprendiz) %></td>
     <td><%= link_to 'Destroy', aprendiz, :confirm => 'Are you sure?', :method => :delete %></td>
+    
   </tr>
 <% end %>
 </table>

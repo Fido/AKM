@@ -1,5 +1,5 @@
 class Municipio < ActiveRecord::Base
-  attr_accessible :name
+  attr_accessible :name , :departamento_id
 
   belongs_to :departamento
 

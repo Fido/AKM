@@ -16,7 +16,7 @@
     <td><%= pregunta.pregunta %></td>
     <td><%= pregunta.buena %></td>
     <td><%= pregunta.puntaje %></td>
-    <td><%= pregunta.prueba_id %></td>
+    <td><%= pregunta.prueba.name %></td>
     <td><%= link_to 'Show', pregunta %></td>
     <td><%= link_to 'Edit', edit_pregunta_path(pregunta) %></td>
     <td><%= link_to 'Destroy', pregunta, :confirm => 'Are you sure?', :method => :delete %></td>
