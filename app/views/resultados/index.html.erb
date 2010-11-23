@@ -1,25 +1,32 @@
 <h1>Listing resultados</h1>
 
-<table>
-  <tr>
-    <th>Equipo</th>
-    <th>Respuesta</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<% form_for :resultado, :url => { :action => "jugar" } do %>
+<table border="1" cellpadding="0" cellspacing="0" align="center">
+ <tr>
+   <% @equipos.each do |equipo| %>
+     <td><%= equipo.nombre %>
+       <%= radio_button :equipo, :equipo_id, equipo.id %>
+     </td>
+   <% end %>
+ </tr>
 
-<% @resultados.each do |resultado| %>
-  <tr>
-    <td><%= resultado.equipo_id %></td>
-    <td><%= resultado.respuesta_id %></td>
-    <td><%= link_to 'Show', resultado %></td>
-    <td><%= link_to 'Edit', edit_resultado_path(resultado) %></td>
-    <td><%= link_to 'Destroy', resultado, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+</table>
+<br />
+<br />
+<table align="center" >
+ <tr>
+<% @preguntas.each do |pregunta| %>
+ <td class="tabletd">
+   <%= submit_tag "#{pregunta.id}", :name => "pregunta_id",
+                       :disable_with => "espere",
+                       :class => "#{estado(pregunta.estado)}",
+                       :disable => true %>
+ </td>
+
+  <% if pregunta.id % 3 == 0 %>
+ </tr>
+
+ <% end %>
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New Resultado', new_resultado_path %>

@@ -1,15 +1,40 @@
+<h1>Equipo: <%= @resultado.equipo.nombre %>  </h1>
+<h1>Pregunta: <%= @pregunta.pregunta %>  </h1>
+
 <p id="notice"><%= notice %></p>
 
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th>Respuesta</th>
+  </tr>
+
+<% @respuestas.each do |respuesta| %>
+   <tr >
+      <td>
+          <%= if respuesta.letra == @pregunta.buena
+          image_tag("v.png", :size => "20x20")
+           end  %>
+      </td>
+      <td>
+         <%= if respuesta.id == @resultado.respuesta_id
+                if respuesta.pregunta_id == @pregunta.id and
+                   respuesta.letra == @pregunta.buena
+                   image_tag("v.png", :size => "20x20")
+                else
+                   image_tag("delete.gif", :size => "20x20")
+                end
+             end
+         %>
+      </td>
+      <td><%=h respuesta.letra %></td>
+      <td><%=h respuesta.respuesta %></td>
+  </tr>
+<% end %>
+</table>
+<br />
 <p>
-  <b>Equipo:</b>
-  <%= @resultado.equipo_id %>
+  <%= link_to("Volver a Jugar", resultados_path ) %>
 </p>
-
-<p>
-  <b>Respuesta:</b>
-  <%= @resultado.respuesta_id %>
-</p>
-
-
-<%= link_to 'Edit', edit_resultado_path(@resultado) %> |
-<%= link_to 'Back', resultados_path %>

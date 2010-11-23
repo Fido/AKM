@@ -6,7 +6,7 @@ class Aprendiz < ActiveRecord::Base
   belongs_to :municipio
   belongs_to :equipo
   
-  has_many :pruebas
+  #has_many :pruebas
 
   validates :cedula ,
             :presence => true ,

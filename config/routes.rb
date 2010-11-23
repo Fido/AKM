@@ -7,13 +7,13 @@ AKM::Application.routes.draw do
 
   resources :finales
 
-  resources :equipos
+  #resources :equipos, :has_many => :aprendices
 
   resources :resultados
 
   resources :respuestas
 
-  resources :preguntas
+  #resources :preguntas
 
   resources :fases
 
@@ -59,13 +59,26 @@ AKM::Application.routes.draw do
   #     end
   #   end
 
+  #resources :respuestas do
+   # resource :pregunta
+  #end
+
+  resources :preguntas do 
+    resources :respuestas
+  end
+
+  resources :equipos do
+    resources :aprendices
+  end
+
+  
   # Sample resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
   #     resource :seller
   #   end
 
-  # Sample resource route with more complex sub-resources
+    # Sample resource route with more complex sub-resources
   #   resources :products do
   #     resources :comments
   #     resources :sales do

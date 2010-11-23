@@ -1,5 +1,7 @@
-<h1>New respuesta</h1>
+<h1>Nueva respuesta de <%= @pregunta.pregunta %></h1>
 
-<%= render 'form' %>
+<% form_for(:respuesta, @respuesta, :url => pregunta_respuestas_path(@pregunta)) do |f| %>
 
-<%= link_to 'Back', respuestas_path %>
+<%= render 'form', :locals => { :f => f } %>
+
+<%= link_to 'Back', preguntas_path %>

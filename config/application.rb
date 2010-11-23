@@ -35,7 +35,8 @@ module AKM
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
-
+      #Encoding.default_external = Encoding::UTF_8 if RUBY_VERSION > "1.9"
+    #config.action_view.encoding = "utf8"
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
   end

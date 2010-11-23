@@ -1,6 +1,10 @@
 <h1>Editing aprendiz</h1>
 
-<%= render 'form' %>
+<% form_for([@equipo, @aprendiz]) do |f| %>
 
-<%= link_to 'Show', @aprendiz %> |
-<%= link_to 'Back', aprendices_path %>
+<%= render 'form', :locals => {:f => f} %>
+
+<% end %>
+
+<%= link_to 'Show', equipo_aprendiz_path(@equipo, aprendiz) %> |
+<%= link_to 'Back', equipo_aprendices_path(@equipo) %>

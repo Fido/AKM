@@ -21,7 +21,7 @@ class PruebasController < ApplicationController
   def new
     @prueba = Prueba.new
     @fases = Fase.find(:all)
-    @aprendices = Aprendiz.find(:all)
+    #@aprendices = Aprendiz.find(:all)
    
     respond_to do |format|
       format.html # new.html.erb
@@ -32,7 +32,7 @@ class PruebasController < ApplicationController
   def edit
     @prueba = Prueba.find(params[:id])
     @fases = Fase.find(:all)
-    @aprendices = Aprendiz.find(:all)
+    #@aprendices = Aprendiz.find(:all)
  
   end
 
@@ -45,7 +45,7 @@ class PruebasController < ApplicationController
         format.xml  { render :xml => @prueba, :status => :created, :location => @prueba }
       else
         @fases = Fase.find(:all)
-        @aprendices = Aprendiz.find(:all)
+        #@aprendices = Aprendiz.find(:all)
       
         format.html { render :action => "new" }
         format.xml  { render :xml => @prueba.errors, :status => :unprocessable_entity }
@@ -62,7 +62,7 @@ class PruebasController < ApplicationController
         format.xml  { head :ok }
       else
         @fases = Fase.find(:all)
-        @aprendices = Aprendiz.find(:all)
+        #@aprendices = Aprendiz.find(:all)
         
         format.html { render :action => "edit" }
         format.xml  { render :xml => @prueba.errors, :status => :unprocessable_entity }

@@ -1,15 +1,14 @@
-<h1>Listing aprendices</h1>
+<h1>Aprendices de <%= @equipo.name %></h1>
 
 <table>
   <tr>
     <th>Cedula</th>
     <th>Nombre</th>
     <th>Apellido</th>
-    <th>Fch ncto</th>
+   
     <th>Email</th>
     <th>Telefono</th>
     <th>Genero</th>
-    <th>Municipio</th>
     <th>Equipo</th>
     <th>Programa</th>
     <th></th>
@@ -18,21 +17,20 @@
    
   </tr>
 
-<% @aprendices.each do |aprendiz| %>
+
+  <% for aprendiz in @aprendices %>
   <tr>
     <td><%= aprendiz.cedula %></td>
     <td><%= aprendiz.nombre %></td>
     <td><%= aprendiz.apellido %></td>
-    <td><%= aprendiz.fch_ncto %></td>
+   
     <td><%= aprendiz.email %></td>
     <td><%= aprendiz.telefono %></td>
     <td><%= aprendiz.genero1 %></td>
-    <td><%= aprendiz.municipio.name %></td>
     <td><%= aprendiz.equipo.name %></td>
     <td><%= aprendiz.programa.name %></td>
-    <td><%= link_to 'Show', aprendiz %></td>
-    <td><%= link_to 'Edit', edit_aprendiz_path(aprendiz) %></td>
-    <td><%= link_to 'Destroy', aprendiz, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', equipo_aprendiz_path(@equipo, aprendiz) %></td>
+    <td><%= link_to 'Edit', edit_equipo_aprendiz_path(@equipo, aprendiz) %></td>
     
   </tr>
 <% end %>
@@ -40,4 +38,5 @@
 
 <br />
 
-<%= link_to 'New Aprendiz', new_aprendiz_path %>
+<%= link_to 'New Aprendiz', new_equipo_aprendiz_path(@equipo) %>
+<%= link_to 'Volver a equipos', equipos_path %>

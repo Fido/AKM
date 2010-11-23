@@ -1,5 +1,4 @@
 class Resultado < ActiveRecord::Base
   belongs_to :equipo
-
-  has_one :respuesta
+  belongs_to :respuesta
 end

@@ -76,6 +76,15 @@ div.field, div.actions {
 
 }
 
+.tabletd {
+	border-bottom: 2px solid #ccc;
+	font-size: 30px;
+	padding: 20px;
+	border-collapse: collapse;
+	border: 1px solid #000;
+}
+
+
 table tr.pair {
 background:#FFFFCC none repeat scroll 0 0;
 color:inherit;

@@ -2,7 +2,7 @@ class Prueba < ActiveRecord::Base
   attr_accessible :name , :fch_limite , :fase_id , :aprendiz_id
 
   belongs_to :fase
-  belongs_to :aprendiz
+  #belongs_to :aprendiz
 
   has_many :preguntas
   has_many :avances

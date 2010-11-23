@@ -16,14 +16,7 @@
 	      <%= options_from_collection_for_select(@fases, "id", "name", @prueba.fase_id ) %>
     </select>
   </div>
-   <div class="field">
-    <%= f.label :aprendiz_id %><br />
-    <select id="prueba_aprendiz_id" name="prueba[aprendiz_id]" class ="campo">
-            <option selected></option>
-	      <%= options_from_collection_for_select(@aprendices, "id", "nombre", @prueba.aprendiz_id ) %>
-    </select>
-  </div>
-
+   
   <div class="actions">
     <%= f.submit %>
   </div>

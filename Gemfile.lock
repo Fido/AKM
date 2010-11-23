@@ -60,6 +60,7 @@ GEM
       rake (>= 0.8.4)
       thor (~> 0.14.0)
     rake (0.8.7)
+    ruby-mysql (2.9.3)
     thor (0.14.3)
     treetop (1.4.8)
       polyglot (>= 0.3.1)
@@ -71,3 +72,4 @@ PLATFORMS
 DEPENDENCIES
   mysql2
   rails (= 3.0.1)
+  ruby-mysql

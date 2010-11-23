@@ -4,6 +4,7 @@
   <tr>
     <th>Totales</th>
     <th>Equipo</th>
+    <th>Puntos</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,11 +14,16 @@
   <tr>
     <td><%= final.totales %></td>
     <td><%= final.equipo_id %></td>
+    <td><% equipo.final.totales rescue 0  %></td>
     <td><%= link_to 'Show', final %></td>
     <td><%= link_to 'Edit', edit_final_path(final) %></td>
     <td><%= link_to 'Destroy', final, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
+
+  <li><%= link_to "Puntajes", finales_path, {:onclick => "return
+  GB_showCenter('Resultados', this.href, 400, 250)"} %></li>
+
 </table>
 
 <br />

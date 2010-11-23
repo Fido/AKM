@@ -36,13 +36,7 @@
 	 <%= options_from_collection_for_select(@municipios, "id", "name", @aprendiz.municipio_id ) %>
     </select>
   </div>
-  <div class="field">
-    <%= f.label :equipo_id %><br />
-    <select id="aprendiz_equipo_id" name="aprendiz[equipo_id]" class ="campo">
-     <option selected></option>
-       <%= options_from_collection_for_select(@equipos, "id", "name", @aprendiz.equipo_id ) %>
-    </select>
-  </div>
+ 
   <div class="field">
     <%= f.label :programa_id %><br />
     <select id="aprendiz_programa_id" name="aprendiz[programa_id]" class ="campo">
@@ -53,6 +47,4 @@
   <div class="actions">
     <%= f.submit %>
   </div>
-
 <% end %>
-

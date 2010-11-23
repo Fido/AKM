@@ -1,20 +1,18 @@
-<%= form_for(@respuesta) do |f| %>
     <%= render "shared/error_messages", :target => @respuesta %>
 
   <div class="field">
-    <%= f.label :pregunta_id %><br />
-    <select id="respuesta_pregunta_id" name="respuesta[pregunta_id]" class ="campo">
-            <option selected></option>
-	     <%= options_from_collection_for_select(@preguntas, "id", "pregunta", @respuesta.pregunta_id ) %>
-    </select>
-  </div>
-  <div class="field">
     <%= f.label :respuesta %><br />
-    <%= f.text_field :respuesta %>
+    <%= f.text_area :respuesta, :cols => 70, :rows => 4 %>
   </div>
   <div class="field">
     <%= f.label :letra %><br />
-    <%= f.text_field :letra %>
+    <%= select(:respuesta,
+                :letra, { "A" => "A",
+                          "B" => "B",
+                          "C" => "C",
+                          "D" => "D",
+                          "E" => "E" },
+                        { :selected => "" } )%>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -12,7 +12,7 @@
 <% @municipios.each do |municipio| %>
   <tr>
     <td><%= municipio.name %></td>
-    <td><%= municipio.departamento_id %></td>
+    <td><%= municipio.departamento.name %></td>
     <td><%= link_to 'Show', municipio %></td>
     <td><%= link_to 'Edit', edit_municipio_path(municipio) %></td>
     <td><%= link_to 'Destroy', municipio, :confirm => 'Are you sure?', :method => :delete %></td>

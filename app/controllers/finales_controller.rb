@@ -1,17 +1,26 @@
 class FinalesController < ApplicationController
-  # GET /finales
-  # GET /finales.xml
-  def index
-    @finales = Final.all
+  layout false
 
+
+  def index
+    @equipos = Equipo.all
+    Final.delete_all
+    @finales = Final.find_by_sql "select r.equipo_id, sum(p.puntaje) totales
+    from resultados r, preguntas p, respuestas t
+    where t.id = r.respuesta_id
+    and t.pregunta_id = p.id
+    and t.letra = p.buena
+    group by r.equipo_id"
+    @finales.each do |f|
+      Final.create(:totales => f.totales, :equipo_id => f.equipo_id)
+    end
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @finales }
     end
   end
 
-  # GET /finales/1
-  # GET /finales/1.xml
   def show
     @final = Final.find(params[:id])
 
@@ -21,8 +30,6 @@ class FinalesController < ApplicationController
     end
   end
 
-  # GET /finales/new
-  # GET /finales/new.xml
   def new
     @final = Final.new
 
@@ -32,19 +39,17 @@ class FinalesController < ApplicationController
     end
   end
 
-  # GET /finales/1/edit
   def edit
     @final = Final.find(params[:id])
   end
 
-  # POST /finales
-  # POST /finales.xml
   def create
     @final = Final.new(params[:final])
 
     respond_to do |format|
       if @final.save
-        format.html { redirect_to(@final, :notice => 'Final was successfully created.') }
+        flash[:notice] = 'Final creada correctamente.'
+        format.html { redirect_to(@final) }
         format.xml  { render :xml => @final, :status => :created, :location => @final }
       else
         format.html { render :action => "new" }
@@ -53,13 +58,12 @@ class FinalesController < ApplicationController
     end
   end
 
-  # PUT /finales/1
-  # PUT /finales/1.xml
   def update
     @final = Final.find(params[:id])
 
     respond_to do |format|
       if @final.update_attributes(params[:final])
+        flash[:notice] = 'Final Actualizada.'
         format.html { redirect_to(@final, :notice => 'Final was successfully updated.') }
         format.xml  { head :ok }
       else
@@ -69,8 +73,6 @@ class FinalesController < ApplicationController
     end
   end
 
-  # DELETE /finales/1
-  # DELETE /finales/1.xml
   def destroy
     @final = Final.find(params[:id])
     @final.destroy

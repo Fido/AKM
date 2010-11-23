@@ -1,4 +1,4 @@
-<h1>Listing respuestas</h1>
+<h1>Listado de Respuestas de <%= @pregunta.pregunta %></h1>
 
 <table>
   <tr>
@@ -9,19 +9,20 @@
     <th></th>
     <th></th>
   </tr>
-
+  
 <% @respuestas.each do |respuesta| %>
   <tr>
     <td><%= respuesta.pregunta.pregunta %></td>
     <td><%= respuesta.respuesta %></td>
     <td><%= respuesta.letra %></td>
-    <td><%= link_to 'Show', respuesta %></td>
-    <td><%= link_to 'Edit', edit_respuesta_path(respuesta) %></td>
-    <td><%= link_to 'Destroy', respuesta, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', pregunta_respuesta_path(@pregunta, respuesta) %></td>
+    <td><%= link_to 'Edit', edit_pregunta_respuesta_path(@pregunta, respuesta.id)%></td>
+    <td><%= link_to 'Destroy', pregunta_respuesta_path(@pregunta, respuesta), :confirm => 'Está seguro?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Respuesta', new_respuesta_path %>
+<%= link_to 'Nueva Respuesta', new_pregunta_respuesta_path %>
+<%= link_to 'Atras', preguntas_path %>

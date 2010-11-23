@@ -1,5 +1,5 @@
 class Final < ActiveRecord::Base
-  attr_accessible :totales
+  attr_accessible :totales , :equipo_id
 
   belongs_to :equipo
 

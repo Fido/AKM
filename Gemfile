@@ -7,6 +7,9 @@ gem 'rails', '3.0.1'
 
 gem 'mysql2'
 
+
+gem 'ruby-mysql'
+
 #gem 'ChainSelects', :git => 'git://github.com/diwadm/ChainSelects.git'
 
 

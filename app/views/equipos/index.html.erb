@@ -6,6 +6,7 @@
     <th></th>
     <th></th>
     <th></th>
+    <th></th>
   </tr>
 
 <% @equipos.each do |equipo| %>
@@ -14,6 +15,7 @@
     <td><%= link_to 'Show', equipo %></td>
     <td><%= link_to 'Edit', edit_equipo_path(equipo) %></td>
     <td><%= link_to 'Destroy', equipo, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Aprendices', equipo_aprendices_path(equipo)  %></td>
   </tr>
 <% end %>
 </table>

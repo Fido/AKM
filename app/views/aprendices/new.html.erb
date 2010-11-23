@@ -1,5 +1,8 @@
 <h1>New aprendiz</h1>
 
-<%= render 'form' %>
+<% form_for([@equipo, @aprendiz]) do |f| %>
 
-<%= link_to 'Back', aprendices_path %>
+<%= render 'form', :locals => {:f => f} %>
+<% end %>
+
+<%= link_to 'Back', equipo_aprendices_path(@equipo) %>

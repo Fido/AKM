@@ -1,6 +1,10 @@
-<h1>Editing respuesta</h1>
+<h1>Editar respuesta</h1>
 
-<%= render 'form' %>
+<% form_for :respuesta, @respuesta,
+            :url => pregunta_respuesta_path(@pregunta, @respuesta),
+            :html => {:method => :put} do |f| %>
 
-<%= link_to 'Show', @respuesta %> |
-<%= link_to 'Back', respuestas_path %>
+<%= render 'form', :locals => { :f => f } %>
+
+<%= link_to 'Show', @pregunta, @respuesta %> |
+<%= link_to 'Back', pregunta_respuestas_path(@pregunta) %>

@@ -1,0 +1,24 @@
+<h1>Equipo: <%= @equipo.name %> </h1>
+<h1>Pregunta: <%= @pregunta.pregunta %> </h1>
+<% form_for(@resultado) do |f| %>
+ <%= f.error_messages %>
+<table>
+ <tr>
+  <th></th>
+  <th></th>
+  <th>Respuesta</th>
+ </tr>
+ <%= hidden_field(:resultado, :equipo_id, :value => @equipo.id) %>
+ <%= hidden_field(:pregunta, :pregunta_id, :value => @pregunta.id) %>
+<% @respuestas.each do |respuesta| %>
+  <tr class="<%= cycle('odd','pair') %>">
+    <td><%= radio_button :resultado, :respuesta_id, respuesta.id %></td>
+    <td><%=h respuesta.letra %></td>
+    <td><%=h respuesta.respuesta %></td>
+ </tr>
+<% end %>
+</table>
+<p>
+  <%= submit_tag 'Jugar' %>
+</p>
+<% end %>

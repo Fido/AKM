@@ -51,5 +51,6 @@
 </p>
 
 
-<%= link_to 'Edit', edit_aprendiz_path(@aprendiz) %> |
-<%= link_to 'Back', aprendices_path %>
+<%= link_to 'Edit', edit_equipo_aprendiz_path(@equipo, @aprendiz) %> |
+<%= link_to 'Back', equipo_aprendices_path(@equipo) %> | 
+<%= link_to 'Destroy', equipo_aprendiz_path(@equipo, @aprendiz), :confirm => 'Are you sure?', :method => :delete %>

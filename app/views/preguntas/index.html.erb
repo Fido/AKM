@@ -1,4 +1,4 @@
-<h1>Listing preguntas</h1>
+<h1>Listado de preguntas</h1>
 
 <table>
   <tr>
@@ -9,6 +9,8 @@
     <th></th>
     <th></th>
     <th></th>
+    <th></th>
+    
   </tr>
 
 <% @preguntas.each do |pregunta| %>
@@ -19,7 +21,9 @@
     <td><%= pregunta.prueba.name %></td>
     <td><%= link_to 'Show', pregunta %></td>
     <td><%= link_to 'Edit', edit_pregunta_path(pregunta) %></td>
-    <td><%= link_to 'Destroy', pregunta, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Destroy', pregunta, :confirm => 'Está seguro?', :method => :delete %></td>
+    <td><%= link_to 'Respuestas', pregunta_respuestas_path(pregunta) %></td>
+    
   </tr>
 <% end %>
 </table>
@@ -27,3 +31,4 @@
 <br />
 
 <%= link_to 'New Pregunta', new_pregunta_path %>
+

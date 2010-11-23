@@ -15,6 +15,6 @@
   <%= @respuesta.letra %>
 </p>
 
+<%= link_to 'Edit', edit_pregunta_respuesta_path(@pregunta, respuesta)%> |
+<%= link_to 'Back', pregunta_respuestas_path(@pregunta) %>
 
-<%= link_to 'Edit', edit_respuesta_path(@respuesta) %> |
-<%= link_to 'Back', respuestas_path %>

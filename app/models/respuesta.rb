@@ -11,5 +11,5 @@ class Respuesta < ActiveRecord::Base
 
   validates :letra ,
             :presence => true ,
-            :length => { :maximum => 3 }
+            :length => { :maximum => 1 }
 end

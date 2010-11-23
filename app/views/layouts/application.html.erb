@@ -1,22 +1,15 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <title>A K M</title>
+  <meta />
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
   
 </head>
 
-  <% yield :HEAD %>
-
 <body>
-
-  <div id="content" >
-    <img src="/images/banner.png" width="1400" height="164" alt="A K M" id="banere round" />
-  </div>
 
   <div id="menuhoriz">
     <ul >
@@ -29,15 +22,14 @@
      </ul>
    </div >
 
-  <div  id="yield">
-    <%= yield  %>
-  </div>
-
    <br />
+
+  <%= tmp = yield(:application) %>
+    <% if tmp.blank? %>
+    <%= yield %>
+  <% end%>
+
    
-  <div id="footer">
-    Powered By Fido - ADSI 2010, Itagüi;Antioquia
-  </div>
 
 </body>
 </html>

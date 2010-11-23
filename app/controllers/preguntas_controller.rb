@@ -62,8 +62,6 @@ class PreguntasController < ApplicationController
     end
   end
 
-  # DELETE /preguntas/1
-  # DELETE /preguntas/1.xml
   def destroy
     @pregunta = Pregunta.find(params[:id])
     @pregunta.destroy
